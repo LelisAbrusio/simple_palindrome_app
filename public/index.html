@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html ng-app="scotchTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Palindrome App</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:100px; }
+		#pal-list 		{ margin-bottom:30px; }
+		#pal-form 	 	{ margin-bottom:50px; }
+	</style>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+
+	<script src="js/controllers/main.js"></script>
+	<script src="js/services/pal.js"></script>
+	<script src="js/core.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+	<div class="container">
+
+		<div class="text-center">
+			<h1><span class="label label-info">{{ pal }}</span></h1>
+		</div>
+
+		<div id="pal-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="Check if phrase is a palindrome" ng-model="formData.text">
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="checkPal()">Check</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
